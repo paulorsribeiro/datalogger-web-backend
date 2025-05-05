@@ -1,19 +1,18 @@
-# Datalogger Backend + Dash com Simulador ESP32
+# Datalogger Backend com Dash e Simulador
 
-Este projeto recebe e visualiza dados de um datalogger (real ou simulado):
-- Localização em mapa (GPS)
-- Temperatura e pressão
-- Mensagens CAN
+Este projeto roda um painel web com Dash + Flask e simula um datalogger ESP32.
 
-### Executar localmente:
+## Instruções para Deploy no Render:
+
+1. Suba os arquivos em um repositório GitHub.
+2. Configure como Web Service em https://render.com
+3. Build command: `pip install -r requirements.txt`
+4. Start command: `gunicorn app:server`
+5. Adicione variável de ambiente: `PORT=5000`
+6. Acesse via `https://<seu-app>.onrender.com/dashboard/`
+
+## Execução Local:
 ```bash
 pip install -r requirements.txt
 python app.py
 ```
-
-### Deploy em Render.com:
-1. Suba os arquivos em um repositório GitHub
-2. Crie um Web Service no Render com Python 3
-3. Configure o build command: `pip install -r requirements.txt`
-4. Start command: `gunicorn app:app`
-5. Acesse: `https://<seu-app>.onrender.com/dashboard/`
